@@ -1,0 +1,96 @@
+.ww{
+    padding-bottom: 10px;
+}
+
+.row .red{
+    background-color: #FF0D00;
+    color: white;
+}
+
+
+.row .green{
+    background-color: #14D100;
+    color: white;
+}
+
+#con_gl .main {
+    background-color: #F5F5F6;
+    padding-top: 60px;
+    height: 100vh;
+}
+
+.where {
+    background-color: white;
+    border: 1px solid #e5e5e6;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: #666;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.rowH {
+    background-color: #FF8900;
+    color: white;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    /*padding-bottom: 40px;*/
+    text-align: center;
+}
+
+.rowL{
+    background-color: #FF8900;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.rowL p {
+    font-size: 200%;
+    font-weight: bold;
+    color: white;
+}
+
+.rowH p {
+    color: white;
+}
+
+.whereB{
+    padding-bottom: 0;
+}
+
+p {
+    color: #333;
+}
+
+.rowH {
+    font-size: 400%;
+    font-weight: bold;
+}
+
+.main p {
+    margin-bottom: 0;
+}
+
+#con_gl .big {
+    padding-left: 10px;
+    padding-right: 0;
+}
+
+@media (max-width: 767px) {
+    #con_gl .big {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .rowH {
+        padding: 10px;
+        padding-bottom: 0;
+        font-size: 400%;
+        font-weight: bold;
+    }
+}

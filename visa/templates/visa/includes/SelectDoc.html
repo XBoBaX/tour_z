@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<div id="con_gl">
+    <div class="gl content">
+        <div class="container">
+            <div class="row" align="center">
+                <div id="spinner" class=""
+                     style="display: none; height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 10;">
+                    <div style="height: 100vh; width: 100vw; position: fixed; background-color: #F5F5F6; top: 0; left: 0; opacity: 0.7"></div>
+                    <img class="imgCen" src="{% static 'image/089b9f5fb0e2556376f0b7db41c047b3.png' %}">
+                </div>
+                <div class="col-12" id="hide2">
+                    <h1>Подбор документов</h1>
+                </div>
+                <div class="col-12 d-none d-md-block">
+                    <h3>Лучший способ узнать что необходимо для въезда в страну</h3>
+                </div>
+                <div class="col-12 inputForm" id="formin">
+
+                    <form role="form" name="doci" id="doc">
+                        {% csrf_token %}
+                        <div class="row">
+
+                            <div class="col-md-4 col-12 pad">
+                                <div class="helpIN d-none" id="Otkyda">Откуда</div>
+                                <input AUTOCOMPLETE="off" onkeyup="showCit(this.value, 'in')" id="inpVilet" type="text"
+                                       class="buttonLef" placeholder="Город вылета" name="vilet">
+                                <input type="hidden" id="country" name="country">
+                                <div class="col-12 pdLR_0">
+                                    <div class="pad helpC" id="city">
+                                        <div onclick="Select('#gor1', '1');" class="gorodi" id="gor1"></div>
+                                        <div onclick="Select('#gor2', '2');" class="gorodi" id="gor2"></div>
+                                        <div onclick="Select('#gor3', '3');" class="gorodi" id="gor3"></div>
+                                        <div onclick="Select('#gor4', '4');" class="gorodi" id="gor4"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-12 pad">
+                                <div class="helpIN d-none" id="Kyda">Куда</div>
+                                <input AUTOCOMPLETE="off" onkeyup="showCit(this.value, 'out')" type="text"
+                                       placeholder="Город прибытия" name="prib" id="inpPrib">
+                                <input type="hidden" id="country2" name="country2">
+                                <div class="col-12 pdLR_0">
+                                    <div class="pad helpC" id="city2">
+                                        <div onclick="Select('#gor01', '1', 'prib');" class="gorodi" id="gor01"></div>
+                                        <div onclick="Select('#gor02', '2', 'prib');" class="gorodi" id="gor02"></div>
+                                        <div onclick="Select('#gor03', '3', 'prib');" class="gorodi" id="gor03"></div>
+                                        <div onclick="Select('#gor04', '4', 'prib');" class="gorodi" id="gor04"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-12 pad vr">
+                                <div class="helpIN" id="Kogda">Желаемое время прибытия</div>
+                                <input id="vr_pr" name="time" style="border: 1px solid silver" type="date"
+                                       class="buttonRig"
+                                       placeholder="Обратно">
+                            </div>
+
+                        </div>
+
+                        <div class="row"></div>
+
+                        <div class="row GoBttn">
+                            <div class="bttnS col-8 col-md-4 offset-md-4 offset-2" style="height: 100%;">
+                                <button onclick="$('#doc').submit();" type="button" class="search btn"
+                                        style="font-size: 150%">Узнать
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

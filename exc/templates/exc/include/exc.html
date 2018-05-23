@@ -1,0 +1,94 @@
+<div id="ht" class="row tct where" style="margin-left: 0; margin-right: 0;">
+    <div class="col-12">
+        <div class="row ex1" style="padding: 10px; font-size: 130%; font-weight: 600;">
+            <div class="col-12" id="kolvo"></div>
+            <div class="col-12" id="bilets"></div>
+            <div class="col-12" id="bilets_price"></div>
+            <div class="col-12">Стоимость отеля: {{ price_H }} грн</div>
+            <div class="d-none" id="ot">{{ price_H }}</div>
+            <div class="col-12" id="exc_">Экскурсии и трансферы: 0</div>
+
+            {% if vises != "не нужна" %}
+                <div class="col-12" id="exc_">Консульский сбор (1 человек): {{ price_vs }} грн</div>
+                {% if kol > 1 %}
+                    <div class="col-12 col-md-4"><input id="kolViz" type="number" min="0" max="{{ kol }}" placeholder="Сколько виз нужно"></div>
+                {% endif %}
+                <div class="d-none" id="priceVis">{{ price_vs }}</div>
+            {% endif %}
+
+            <div class="col-12" align="right" style="padding-top: 20px;"><h4 id="vsego">Всего: </h4></div>
+            <div class="col-12 col-md-4 offset-md-8" style="padding-bottom: 20px; padding-top: 20px;">
+                <button class="btn {% if days < 0 %}disabled{% endif %} btnOl">Подтвердить</button>
+            </div>
+        </div>
+    </div>
+
+    {% if vises != "не нужна" %}
+        <div class="col-12 col-md-8">
+            <div class="row ex1" style="padding: 10px">
+                <div class="col-12">
+                    <h4>Необходимые документы: </h4>
+                    <p style="white-space: pre-line">{{ doc }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4" id="vis">
+            <div class="row ex1" align="center">
+                {% if days > 0 %}
+                    <div class="col-12 ysp">Вы успеете</div>
+                {% else %}
+                    <div class="col-12 ysp">{{ days }}</div>
+                    <div class="col-12" style="font-weight: bold; font-size: 120%">Необходимо еще</div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    {% if list|length %}
+        <div class="col-12">
+            <div class="row ex1">
+                <div class="col-12" align="center" style="padding: 15px">
+                    <h4>Экскурсии</h4>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% for ch in list %}
+        <div class="col-12 col-md-4">
+            <div class="row ex1">
+                <div class="row" style="padding-left: 15px; padding-right: 15px" id="blur{{ ch.name }}">
+                    <div class="col-12 to_col">
+                        <img src="{{ ch.photo.url }}" class="im">
+                    </div>
+                    <div class="col-6" style="padding-top: 10px">
+                        {{ ch.name }}
+                    </div>
+                    <div class="col-6" style="padding-top: 10px" align="right">
+                        {{ ch.price }} грн
+                        <div class="d-none" id="pr{{ ch.name }}">{{ ch.price }}</div>
+                    </div>
+                    <div class="col-12" style="padding-top: 10px">
+                        Продолжительность: {{ ch.Duration }} ч
+                    </div>
+                    <div class="col-12 checkbox" style="padding-top: 10px">
+                        <form class="form-inline" style="padding-bottom: 10px">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="{{ ch.name }}" style="width: 20px">
+                                <label class="form-check-label" for="{{ ch.name }}">Трансфер: {{ ch.priceTRa }}
+                                    грн</label>
+                                <div class="d-none" id="tr{{ ch.name }}">{{ ch.priceTRa }}</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12" style="height: 130%; padding: 0;">
+                    <button style="width: 100%; border-radius: 0 0 4px 4px;" class="btnBl btn" id="Add{{ ch.name }}"
+                            onclick="select('{{ ch.name }}'); return false;">Добавить
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    {% endfor %}
+
+
+</div>

@@ -1,0 +1,112 @@
+
+
+.leftPanel #vises{
+    height: 100%;
+}
+
+
+.leftPanel #list{
+    background-color: #F5F5F6;
+}
+
+#list{
+    border-bottom: 1px solid silver;
+}
+
+#vises h4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.content{
+    padding-top: 80px;
+}
+
+.leftPanel{
+    min-height: 100vh;
+    background-color: #F5F5F6;
+    border-right: 1px solid silver;
+}
+
+.mainPanel{
+    /*height: 100vh;*/
+    height: 100%;
+    background-color: #F5F5F6;
+}
+
+.active2{
+    background-color: #e5e5e5;
+}
+
+.row .visaList{
+    height: 100%;
+    min-height: 60px;
+    cursor: pointer;
+}
+
+.visaList:hover{
+    background-color: #e5e5e5;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li{
+    list-style-type: none;
+    padding-left: 0;
+    color: #666;
+}
+
+li:before{
+    content: '— ';
+}
+
+.visaList p{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%)
+}
+
+.leftPanel .rowGroup {
+    min-height: 60px;
+}
+
+.mainContent{
+    margin-bottom: 15px;
+}
+
+.padding-top10 {
+    padding-top: 10px;
+}
+
+.margin-top15 {
+    margin-top: 15px;
+}
+
+.blockC{
+    border: 1px solid silver;
+    background-color: white;
+}
+
+.blockC p{
+    color: #666;
+}
+
+@media (max-width: 767px) {
+    .vr{
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 575.9px) {
+    .leftPanel{
+        height: 60px;
+        background-color: #F5F5F6;
+        border-right: 0;
+        border-bottom: 1px solid silver;
+    }
+}

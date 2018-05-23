@@ -1,0 +1,37 @@
+{% for ch in listH %}
+    <div id="ht" class="row tct where ht" style="margin-left: 0; margin-right: 0;">
+        <div class="col-12">
+
+            <div class="row">
+                <div class="col-4" style="padding-left: 0"><img style="height: 100%; object-fit: cover; width: 100%; border-radius: 4px 0 0 4px;" src="{{ ch.photo.url }}"></div>
+                <div class="col-8" style="padding-top: 10px">
+                    <div class="row">
+                        <h4>{{ ch.nameOtel }}</h4>
+
+                    </div>
+                    <div class="row" style="padding-right: 15px">
+                        {{ ch.opicanie }}
+                    </div>
+                    {% if ch.food %}
+                        <div class="row" style="color: black; font-size: 90%; padding-right: 15px">
+                            В стоимость входит завтрак/обед/ужин
+                            <div id="price_H" class="d-none">{{ ch.total }}</div>
+                        </div>
+                    {% endif %}
+                    <div class="row" style="padding-right: 15px">
+                         <p>Цена за 1 человека в день: {{ ch.price_one_pers_day }} грн. Количество дней: {{ day }}</p>
+                    </div>
+                    <div class="row" style="padding-right: 15px">
+                         <h4>Цена за всех ({{ kol }}): {{ ch.total }} грн</h4>
+                    </div>
+                    <div class="row" style="padding-right: 15px; padding-bottom: 15px" >
+                        <div class="col-12 col-md-4 offset-md-8" >
+                            <button onclick="excursions('{{ ch.nameOtel }}', {{ day }}, {{ ch.total }}); return false;" class="btn btnBl">Выбрать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endfor %}

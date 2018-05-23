@@ -1,0 +1,112 @@
+<div class="container-fluid main">
+    <div class="row" style="padding: 10px">
+        <div class="col-12 where">
+            <h4>{{ countryOtPyc }} ({{ short_otk }}) в {{ countryKydPyc }} ({{ short_kyd }})</h4>
+        </div>
+        {% if vises == "не нужна" %}
+            <div class="container-fluid where whereB" style="color: black">
+                <h3>Виза в данную странну не нужна</h3>
+                <h4>Документы которые нужны:</h4>
+                <ul>
+                    <li style="color: #333;font-size: 200%;">Загранпаспорт</li>
+                    <li style="color: #333;font-size: 200%;">Билеты</li>
+                </ul>
+            </div>
+            <div class="col-4 where whereB" style="color: #666;padding-left: 0px;padding-right: 0px;">
+                <h4 style="padding-left:  10px;">Без визы можно находится:</h4>
+                <div class="rowH" align="center">
+                    <p style="font-weight: bold; padding-bottom: 10px">{{ day }}</p>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-md-8 col-12 big" style="padding-left: 0;">
+
+                {% if suc == "true" %}
+                    <div class="container-fluid where whereB ww green">
+                        <h3>Оформить визу к {{ time_u }}</h3>
+                        <h4>Можно успеть</h4>
+                    </div>
+                {% else %}
+                    <div class="container-fluid where whereB ww red">
+                        <h3>Оформить визу к {{ time_u }} Не выйдет.</h3>
+                        <h4>Виза будет готова минимум к {{ time_nado }}</h4>
+                    </div>
+                {% endif %}
+
+                <div class="container-fluid where whereB" style="white-space: pre-line;">
+                    <h4>Для оформления визы в {{ countryKydPyc }} нужны документы:</h4>
+                    <p>{{ doc }}</p>
+                </div>
+
+                {% if uk_is == "true" %}
+                <div class="container-fluid where whereB" style="color: black">
+                    <h3 style="color: #666">Посольство {{ countryKydPyc }}:</h3>
+                    <h4 style="color: #444">{{ pos }}</h4>
+
+                    {% if kol > 0 %}
+                        {% if fl == "true" %}
+                            <h3 style="color: #666">В вашем городе есть консульство:</h3>
+                            <h4 style="color: #444">{{ indexG }}</h4>
+                        {% endif %}
+
+                        <h3 style="color: #666">Адреса консульств:</h3>
+                        <h4 style="color: #444; white-space: pre-line;">{{ kons }}</h4>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+
+
+
+            <div class="col-md-4 col-12 big">
+
+                <div class="container-fluid where whereB">
+                    {% if max_term == min_term %}
+                        <h4>Оформление визы займет:</h4>
+                        <div class="row rowH">
+                            <div class="col-12" align="center">
+                                <p>{{ min_term }}</p>
+                            </div>
+                        </div>
+                        <div class="row rowL">
+                            <div class="col-12" align="center">
+                                <p style="font-size: 200%; color: white">дней</p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <h4>Оформление визы займет от:</h4>
+                        <div class="row rowH">
+                            <div class="col-12" align="center">
+                                <p>{{ min_term }} - {{ max_term }}</p>
+                            </div>
+                        </div>
+                        <div class="row rowL">
+                            <div class="col-12" align="center">
+                                <p style="font-size: 200%; color: white">дней</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="container-fluid where whereB">
+                    {% if price != 0 %}
+                        <h4>Консульский сбор:</h4>
+                        <div class="row rowH" style="background-color: #25D500">
+                            <div class="col-12" align="center">
+                                <p>{{ price }}$</p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <h4>Консульский сбор:</h4>
+                        <div class="row rowH" style="background-color: #25D500">
+                            <div class="col-12" align="center">
+                                <p>бесплатно</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        {% endif %}
+    </div>
+</div>

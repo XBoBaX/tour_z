@@ -1,0 +1,97 @@
+{% load staticfiles %}
+ <form id="edit1" role="form" name="callback">{% csrf_token %}
+    <div class="profile">
+        <div class="container-fluid">
+            <div class="row hed">
+                <div class="col-10">
+                    <h2>Личные данные</h2>
+                </div>
+                <div onclick="editClick(); return false;" class="col-2 edit">
+                    <img id="edit" class="centerB ot" src="{% static 'image/edit.png' %}">
+                    <img onclick="$('#edit1').submit();" id="yes" class="centerB d-none in" src="{% static 'image/yes.png' %}">
+                </div>
+            </div>
+
+            <div class="row bio fr">
+                <div class="col-2 col-md-2"><img class="centerB" src="{% static 'image/name.png' %}"></div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12 col-md-4"><div class="centerB left">ФИО:</div></div>
+                        <div class="col-12 col-md-6">
+                            <div class="centerB left ot">{% if  profile.fio != None %}{{profile.fio }}{% else %}<i>Неизвестно</i>{% endif %}</div>
+                            <input type="text" class="centerB left d-none in" name="fio" value="{{profile.fio}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row bio">
+                <div class="col-2 col-md-2"><img class="centerB" src="{% static 'image/mail.png' %}"></div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12 col-md-4"><div class="centerB left">Почта:</div></div>
+                        <div class="col-12 col-md-6">
+                            <div class="centerB left ot">{% if  profile.mail != None %}{{profile.mail}}{% else %}<i>Неизвестно</i>{% endif %}</div>
+                            <input type="text" class="centerB left d-none in" name="mail" value="{{profile.mail}}">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+{#            <div class="row bio">#}
+{#                <div class="col-2 col-md-2"><img class="centerB" src="{% static 'image/location.png' %}"></div>#}
+{#                <div class="col-10">#}
+{#                    <div class="row">#}
+{#                        <div class="col-12 col-md-4"><div class="centerB left">Страна (рекомендация):</div></div>#}
+{#                        <div class="col-12 col-md-6">#}
+{#                            <div class="centerB left ot">{% if  profile.location != None %}{{profile.location}}{% else %}<i>Неизвестно</i>{% endif %}</div>#}
+{#                            <input type="text" class="centerB left d-none in" id="con" name="location" value="{{profile.location}}">#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+            <div class="row bio">
+                <div class="col-2 col-md-2"><img class="centerB" src="{% static 'image/brithday.png' %}"></div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12 col-md-4"><div class="centerB left">Дата рождения:</div></div>
+                        <div class="col-12 col-md-6">
+                            <div class="centerB left ot">{% if  profile.birth_date != None %}{{profile.birth_date}}{% else %}<i>Неизвестно</i>{% endif %}</div>
+                            <input type="date" class="centerB left d-none in" name="birth_date" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row bio">
+                <div class="col-2 col-md-2"><img class="centerB" src="{% static 'image/gender.png' %}"></div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12 col-md-4"><div class="centerB left">Пол:</div></div>
+                        <div class="col-12 col-md-6">
+                            <div class="centerB left ot">
+                                {% if  profile.male != None %}
+                                    {% if profile.male == 'm' %} Мужской
+                                    {% else %} Женский
+                                    {% endif %}
+                                {% else %}<i>Неизвестно</i>{% endif %}
+                            </div>
+{#                            <input list="gender" class="centerB left d-none in" value="Мужской">#}
+                            <select name="male" class="centerB left d-none in">
+                                <list id="gender">
+                                    <option {% if profile.male == 'm' %} selected {% endif %} value="m">Мужской</option>
+                                    <option {% if profile.male == 'f' %} selected {% endif %} value="f">Женский</option>
+                                </list>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{#            {% if profile.Shengen %}checked="checked"{% endif %}#}
+
+
+        </div>
+    </div>
+ </form>

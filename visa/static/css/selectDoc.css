@@ -1,0 +1,22 @@
+.gl{
+    /*padding-top: 80px;*/
+    padding-top: 25vh;
+    height: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #039BE5, #2D82AC);
+}
+
+.gl h1, .gl h3{
+    color: white;
+}
+
+.gl h3{
+    margin-bottom: 10px;
+}
+
+.helpIN{
+    color: white;
+    position: absolute;
+    top: -20px;
+    left: 5px;
+}

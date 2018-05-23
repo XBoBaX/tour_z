@@ -1,0 +1,356 @@
+body {
+    font-family: Open Sans, Segoe UI, Verdana, Arial, Tahoma, sans-serif;
+}
+
+header {
+    height: 60px;
+    background: linear-gradient(90deg, #0f94d5, #2b83ae);
+    position: fixed;
+    width: 100vw;
+    z-index: 2;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#divId {
+    background-color: white;
+    height: 290px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    border: 1px silver solid;
+    border-top: 0;
+}
+
+#divId2 {
+    background-color: #f5f5f6;
+    height: 160px;
+    border-radius: 0 0 10px 10px;
+    border: 1px silver solid;
+    border-top: 0;
+
+}
+
+#divId2 a {
+    color: #3e77aa;
+}
+
+.errorIn {
+    border-color: red;
+}
+
+#divId2 .col-12 {
+    border-bottom: 1px solid silver;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+#divId input {
+    width: 98%;
+    margin: 10px;
+}
+
+input {
+    height: 48px;
+
+}
+
+#inp {
+    /*width: 400px;*/
+    max-width: 100%;
+}
+
+#formVhod, #formReg {
+    padding-top: 10px;
+}
+
+#hide {
+    display: block;
+}
+
+#error-login {
+    padding: 10px;
+    padding-top: 15px;
+}
+
+.bl_t{
+    font-weight: 600;
+    font-size: 110%;
+}
+
+.arrows {
+    float: right;
+}
+
+.btnEnter {
+    float: right
+}
+
+.vhod:hover {
+    cursor: pointer;
+    background-color: #0288D1;
+    text-decoration: underline;
+}
+
+.vhod {
+    background-color: #0288D1;
+    color: white;
+}
+
+.vhodD {
+    background-color: #039BE5;
+    color: white;
+}
+
+.bttnS {
+    height: 10vh;
+}
+
+.buttonLef {
+    border-radius: 5px 0 0 5px;
+}
+
+.buttonRig {
+    border-radius: 0 5px 5px 0;
+}
+
+#c:hover {
+    color: #ff8900;
+}
+
+.search {
+    width: 100%;
+    /*height: 100%;*/
+    background-color: #ff8900;
+    color: white;
+}
+
+#formin .row .pad {
+    padding: 5px 0 5px;
+}
+
+#formin .pdLR_0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.gorodi:hover{
+    cursor: pointer;
+}
+.gorodi {
+    padding-left: 15px;
+}
+
+.gorodiA {
+    background-color: #dfe5ec;
+}
+
+div#city3 {
+    /*height: 100px;*/
+    /*width: 400px;*/
+    text-align: left;
+    padding: 0;
+    background-color: #F5F5F6;
+    border: 1px solid silver;
+    border-radius: 0 0 20px 20px;
+    min-height: 100%;
+    width: 94%;
+    position: absolute;
+    z-index: 1;
+    margin-left: 15px;
+    border-right-width: 1px;
+    margin-right: 15px;
+    left: 0;
+}
+
+.row .pdLR_0 #city, #city2 {
+    text-align: left;
+    padding: 0;
+    width: 100%;
+    background-color: #F5F5F6;
+    border: 1px solid silver;
+    border-radius: 0 0 20px 20px;
+    min-height: 100%;
+}
+
+#gor1:hover, #gor2:hover, #gor3:hover, #gor4:hover, #gor01:hover, #gor02:hover, #gor03:hover, #gor04:hover, #gor001:hover, #gor002:hover, #gor003:hover, #gor004:hover {
+    background-color: #dfe5ec;
+}
+
+#gor1, #gor2, #gor3, #gor4, #gor01, #gor02, #gor03, #gor04, #gor001, #gor002, #gor003, #gor004 {
+    border-bottom: 1px solid #dfe5ec;
+    font-size: 130%;
+}
+
+#gor4, #gor04, #gor004 {
+    margin-bottom: 20px;
+}
+
+.helpC {
+    display: none;
+    padding: 0;
+    background-color: white;
+}
+
+.GoBttn {
+    margin-top: 7vh;
+}
+
+.inputForm {
+    margin-top: 2vh;
+}
+
+.container {
+    height: 100%;
+}
+
+.head {
+    height: 100%;
+
+}
+
+.headBlock {
+    height: 100%;
+    cursor: pointer;
+}
+
+.headBlock:hover {
+    /*background-color: #0288D1;*/
+    box-shadow: 0 0 0 128px rgba(0, 0, 0, 0.05) inset;
+    cursor: pointer;
+}
+
+.headBlock a {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.rr{
+    height: 100%;
+}
+
+.imgCen {
+    width: 10%;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    margin-right: -50%;
+    opacity: 1;
+    /*transform: translate(-50%, -50%);*/
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(360deg);
+    }
+    to {
+        transform:rotate(0deg);
+    }
+}
+
+.active:hover {
+    /*background-color: #0288D1;*/
+    box-shadow: 0 0 0 128px rgba(0, 0, 0, 0.03) inset;
+}
+
+.active {
+    /*background-color: #0288D1;*/
+    box-shadow: 0 0 0 128px rgba(0, 0, 0, 0.03) inset;
+
+}
+
+.ticket h1 {
+    color: white;
+}
+
+.ticket h3 {
+    color: white;
+}
+
+.ticket {
+    padding-top: 25vh;
+    height: 100%;
+    min-height: 100vh;
+    /*background-color: #039BE5;*/
+    background: linear-gradient(45deg, #039BE5, #2D82AC);
+}
+
+.ticket .block {
+    text-align: center;
+}
+
+@media (max-width: 576px), (max-height: 400px) {
+    #hide {
+        display: none;
+    }
+}
+
+@media (min-width: 767.1px) and (max-width: 1999px) {
+    #divId2 {
+        height: 230px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #divId2 {
+        height: 160px;
+    }
+}
+
+@media (max-width: 767px) {
+    #divId2 {
+        height: 160px;
+    }
+
+    .sm_m {
+        margin-top: 20px
+    }
+
+    #formin .row .sm_r {
+        padding-right: 1px;
+    }
+
+    #formin .row .sm_l {
+        padding-left: 1px;
+    }
+
+    #formin .row .pad {
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 1999px) {
+    /*#divId2{*/
+    /*height: 230px;*/
+    /*}*/
+}
+
+@media (max-height: 400px) {
+
+    #hide {
+        display: none;
+    }
+
+    #hide2 {
+        display: none;
+    }
+}

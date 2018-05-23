@@ -1,0 +1,42 @@
+<div class="container-fluid main_t">
+    <div class="row">
+        <div class="col-12">
+            <div class="row row_no">
+                {% for ch in tr %}
+                    <div class="col-12 tck">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>Тур в город: {{ ch.obj_tickets.toLoc }} </h4>
+                            </div>
+                            <div class="col-12">
+                                <p>Количество человек: {{ ch.kolvo_people }} </p>
+                            </div>
+                            <div class="col-12">
+                                <p>Билеты ({{ ch.obj_tickets.type }}) : {{ ch.tickets }} </p>
+                            </div>
+                            <div class="col-12">
+                                <p style="font-weight: bold">Отель: {{ ch.obj_hotel.nameOtel }}
+                                    {% if ch.obj_hotel.food %}
+                                        <span style="font-weight: normal"> в стоимость входит еда</span>
+                                    {% endif %}
+                                </p>
+                            </div>
+                            {% if ch.exc|length %}
+                                <div class="col-12">
+                                    <p style="font-weight: bold">Экскурсии: {{ ch.exc }}</p>
+                                </div>
+                            {% endif %}
+                            <div class="col-12">
+                                <p>В туре: {{ ch.obj_tickets.go_date }} - {{ ch.obj_tickets.go_date }} </p>
+                            </div>
+                            <div class="col-12" style="font-weight: bold; font-size: 120%" align="right">
+                                Стоимость: {{ ch.total_price }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+{% load staticfiles %}
+{% block content %}
+    <header>
+        <div class="container">
+            <div class="row head">
+                <div class="col-2 d-none d-sm-block text-center d1" align="center"></div>
+                <div id="glav" onclick="active(this); return false" class="col-3 col-sm-2 headBlock active"><a href="/">Главная</a></div>
+                <div id="tyri" onclick="active(this); return false" class="col-3 col-sm-2 headBlock"><a href="/visa/">Документы</a></div>
+                <div id="abAs" onclick="active(this); return false" class="col-3 col-sm-2 headBlock"><a href="/about/as">О нас</a></div>
+                {% if username %}
+                    <div id="vihod" class="col-3 col-sm-2 offset-sm-2 headBlock" onclick="anichange('#divId2', '#vihod'); return false" align="center"><a href="#">Аккаунт ({{ username }})</a></div>
+                {% else %}
+                    <div id="vhod" onclick="anichange('#divId', '#vhod'); return false"  class="col-2 offset-1 col-md-2 offset-md-2 headBlock"><a href="/auth/login/">Вход</a></div>
+                {% endif %}
+            </div>
+            <div class="row">
+                <div class="offset-md-6 col-md-6 col-12" id="divId" style="display: none;     padding-bottom: 310px;">
+                    <div class="row" style="border-radius: 10px" align="center">
+                        <div id="hod" onclick="RegVh(this); return false" class="col-6 vhod">Вход</div>
+                        <div id="reg" onclick="RegVh(this); return false" class="col-6 vhod vhodD">Регистрация</div>
+                    </div>
+                    <form id="formVhod" role="form">{% csrf_token %}
+                        <input type="text" class="frInput" placeholder="Логин" name="username" id="username">
+                        <input type="password" placeholder="Пароль" name="password" id="password">
+                        <input class="btn btnEnter" type="submit" value="Войти" style="width: 40%;">
+                        <label id="error-login"></label>
+                    </form>
+                    <form id="formReg" role="form" style="display: none">{% csrf_token %}
+                        <input type="text" class="frInput" name="username" placeholder="Логин">
+                        <input type="password" name="password1" placeholder="Пароль">
+                        <input type="password" name="password2" placeholder="Повторите пароль">
+                        {{ form }}
+                        <input class="btn btnEnter" type="submit" value="Зарегистрироваться" style="width: 60%;">
+                        <label id="error-login2"></label>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-md-10 col-md-2 col-12" id="divId2" style="display: none">
+                    <div class="row" style="border-radius: 10px" align="left">
+                        <div onclick="window.location.href='/my/account/'" class="col-12"><a href="/my/account/">Личные данные</a><a href="#" class="arrows">></a></div>
+                        <div onclick="window.location.href='/my/tour/'" class="col-12"><a href="#">Мои туры</a><a href="/my/account/" class="arrows">></a></div>
+                        <div onclick="window.location.href='/auth/logout/'" class="col-12"><a style="color: #ac313a;" href="/auth/logout/">Выйти, {{ username }}</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}

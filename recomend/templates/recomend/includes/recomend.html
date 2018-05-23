@@ -1,0 +1,150 @@
+{% load staticfiles %}
+<div class="container-fluid" id="recomend">
+    <div class="row first" align="center">
+
+        <div class="col-12">
+            <img src="{% static 'image/location.png' %}">
+        </div>
+        <div class="col-12 margin-bottom25">
+            <h4 id="coun">Рекомендованные туры в </h4>
+            <input type="hidden" id="coun_inp" value="{{ cntr }}">
+            <div class="col-12 col-sm-8 col-lg-5">
+                <input AUTOCOMPLETE="off" type="text" class="d-none" id="inp"
+                       onkeyup="showCit(this.value, 'rec')">
+            </div>
+            <div class="col-12 col-sm-8 col-lg-5" style="width: 100%;">
+                <div class="pad helpC" id="city3" style="position: absolute; z-index: 1;">
+                    <div onclick="Select('#gor001', '1', 'recom');" class="gorodi" id="gor001"></div>
+                    <div onclick="Select('#gor002', '2', 'recom');" class="gorodi" id="gor002"></div>
+                    <div onclick="Select('#gor003', '3', 'recom');" class="gorodi" id="gor003"></div>
+                    <div onclick="Select('#gor004', '4', 'recom');" class="gorodi" id="gor004"></div>
+                </div>
+            </div>
+        </div>
+        <div class="offset-md-2 col-md-8 margin-top15">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    {% if rk1.city|length > 0 %}
+                        <div class="row">
+                            <div class="container">
+                                <div onclick="go_rec('{{ rk1.city }}', {{ rk1.price }}); return false;" class="col-12 gal recom">
+                                    <div class="col-12 pic">
+                                        <img src="{{ rk1.photo.url }}">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row cart" style="padding-bottom: 0">
+                                            <div class="col-6 textSity" align="left">
+                                                <h4>{{ rk1.city }}</h4>
+                                            </div>
+                                            <div class="col-6" align="right">
+                                                <a href="#">{{ rk1.price }} грн</a>
+                                            </div>
+                                        </div>
+                                        <div class="row cart">
+                                            <div class="col-6 textCountry" align="left">
+                                                {{ rk1.country }}
+                                            </div>
+                                            <div class="col-6 textDate" align="right">
+                                                {{ rk1.birth_date }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if rk3.city|length > 0 %}
+                        <div class="row">
+                            <div class="container">
+                                <div onclick="go_rec('{{ rk3.city }}', {{ rk3.price }}); return false;" class="col-12 gal rek recom">
+                                    <div class="col-12 pic">
+                                        <img src="{{ rk3.photo.url }}">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row cart" style="padding-bottom: 0">
+                                            <div class="col-6 textSity" align="left">
+                                                <h4>{{ rk3.city }}</h4>
+                                            </div>
+                                            <div class="col-6" align="right">
+                                                <a href="#">{{ rk3.price }} грн</a>
+                                            </div>
+                                        </div>
+                                        <div class="row cart">
+                                            <div class="col-6 textCountry" align="left">
+                                                {{ rk3.country }}
+                                            </div>
+                                            <div class="col-6 textDate" align="right">
+                                                {{ rk3.birth_date }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-6 col-12">
+                    {% if rk2.city|length > 0 %}
+                        <div class="row">
+                            <div class="container">
+                                <div onclick="go_rec('{{ rk2.city }}', {{ rk2.price }}); return false;" class="col-12 gal recom">
+                                    <div class="col-12 pic">
+                                        <img src="{{ rk2.photo.url }}">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row cart" style="padding-bottom: 0">
+                                            <div class="col-6 textSity" align="left">
+                                                <h4>{{ rk2.city }}</h4>
+                                            </div>
+                                            <div class="col-6" align="right">
+                                                <a href="#">{{ rk2.price }} грн</a>
+                                            </div>
+                                        </div>
+                                        <div class="row cart">
+                                            <div class="col-6 textCountry" align="left">
+                                                {{ rk2.country }}
+                                            </div>
+                                            <div class="col-6 textDate" align="right">
+                                                {{ rk2.birth_date }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if rk4.city|length > 0 %}
+                        <div class="row">
+                            <div class="container">
+                                <div onclick="go_rec('{{ rk4.city }}', {{ rk4.price }}); return false;" class="col-12 gal recom">
+                                    <div class="col-12 pic">
+                                        <img src="{{ rk4.photo.url }}">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row cart" style="padding-bottom: 0">
+                                            <div class="col-6 textSity" align="left">
+                                                <h4>{{ rk4.city }}</h4>
+                                            </div>
+                                            <div class="col-6" align="right">
+                                                <a href="#">{{ rk4.price }} грн</a>
+                                            </div>
+                                        </div>
+                                        <div class="row cart">
+                                            <div class="col-6 textCountry" align="left">
+                                                {{ rk4.country }}
+                                            </div>
+                                            <div class="col-6 textDate" align="right">
+                                                {{ rk4.birth_date }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

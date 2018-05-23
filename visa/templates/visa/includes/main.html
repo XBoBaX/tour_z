@@ -1,0 +1,28 @@
+<div class="container-fluid content">
+    <div class="row">
+        <div class="col-12 col-sm-3 leftPanel">
+            <div class="row rowGroup d-none d-sm-block">
+                <div onclick="VisaActive('.v1')" class="v1 col-12 visaList active2"><p>Шенгенская виза</p></div>
+                <div onclick="VisaActive('.v2')" class="v2 col-12 visaList"><p>Виза в США</p></div>
+                <div onclick="VisaActive('.v3')" class="v3 col-12 visaList"><p>Виза в Китай</p></div>
+                <div onclick="VisaActive('.v4')" class="v4 col-12 visaList"><p>Виза в Азию</p></div>
+                <div onclick="VisaActive('.v5')" class="v5 col-12 visaList"><p>Виза в Австралию</p></div>
+                <div onclick="VisaActive('.v6')" class="v6 col-12 visaList"><p>Виза в Великобританию</p></div>
+            </div>
+            <div id="vises" onclick="VisaAnichange('#list'); return false"  class="col-12 d-sm-none"><h4>Виза \/</h4></div>
+        </div>
+        <div class="col-12 d-sm-none" id="list" style="display: none">
+            <div class="row rowGroup ">
+                <div onclick="VisaActive('.v1')" class="v1 col-12 visaList active2"><p>Шенгенская виза</p></div>
+                <div onclick="VisaActive('.v2')" class="v2 col-12 visaList"><p>Виза в США</p></div>
+                <div onclick="VisaActive('.v3')" class="v3 col-12 visaList"><p>Виза в Китай</p></div>
+                <div onclick="VisaActive('.v4')" class="v4 col-12 visaList"><p>Виза в Азию</p></div>
+                <div onclick="VisaActive('.v5')" class="v5 col-12 visaList"><p>Виза в Австралию</p></div>
+                <div onclick="VisaActive('.v6')" class="v6 col-12 visaList"><p>Виза в Великобританию</p></div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-9 mainPanel" id="visInfo">
+
+        </div>
+    </div>
+</div>

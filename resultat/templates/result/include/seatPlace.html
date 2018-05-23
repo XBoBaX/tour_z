@@ -1,0 +1,201 @@
+{% load staticfiles %}
+<div class="col-12 select" id="soder">
+    <div class="col-12" align="center"><h4>Выбор мест</h4> </div>
+    <div class="row" style="border-top: 1px solid black;  padding-bottom: 30px; {% if kol == 3 %} padding-bottom: 20px; border-bottom: 1px solid black; {% endif %}">
+    <div style="display: none" id="dayInTour">{{ dayInTour }}</div>
+{#     A - B   1 5#}
+        <div class="col-md-4 col-6">
+            <div class="col-12">
+{#                1 - 5#}
+                <div class="row" align="center">
+                    <div class="col-1 offset-3 pad0">1</div>
+                    <div class="col-1 offset-1 pad0">2</div>
+                    <div class="col-1 offset-1 pad0">3</div>
+                    <div class="col-1 offset-1 pad0">4</div>
+                    <div class="col-1 offset-1 pad0">5</div>
+                </div>
+
+                <div class="row" style="height: 100%; padding-bottom: 10px">
+                    <div class="col-1 offset-1" style="padding: 0">A</div>
+                    <div id="A_1" class="col-1 offset-1 black blackP {% if ch1 == "1" %}active{% endif %}"></div>
+                    <div id="A_2" class="col-1 offset-1 black blackP {% if ch2 == "1" %}active{% endif %}"></div>
+                    <div id="A_3" class="col-1 offset-1 black {% if ch3 == "1" %}active{% endif %}"></div>
+                    <div id="A_4" class="col-1 offset-1 black {% if ch4 == "1" %}active{% endif %}"></div>
+                    <div id="A_5" class="col-1 offset-1 black {% if ch5 == "1" %}active{% endif %}"></div>
+                </div>
+                <div class="row" style="height: 100%">
+                    <div class="col-1 offset-1" style="padding: 0">B</div>
+                    <div id="B_1" class="col-1 offset-1 black blackP {% if cg1 == "1" %}active{% endif %}"></div>
+                    <div id="B_2" class="col-1 offset-1 black blackP {% if cg2 == "1" %}active{% endif %}"></div>
+                    <div id="B_3" class="col-1 offset-1 black {% if cg3 == "1" %}active{% endif %}"></div>
+                    <div id="B_4" class="col-1 offset-1 black {% if cg4 == "1" %}active{% endif %}"></div>
+                    <div id="B_5" class="col-1 offset-1 black {% if cg5 == "1" %}active{% endif %}"></div>
+            </div>
+            </div>
+        </div>
+{#     A - B   6 - 10#}
+        <div class="col-md-4 col-6">
+            <div class="col-12">
+                <div class="row" align="center">
+                    <div class="col-1 offset-1 pad0">6</div>
+                    <div class="col-1 offset-1 pad0">7</div>
+                    <div class="col-1 offset-1 pad0">8</div>
+                    <div class="col-1 offset-1 pad0">9</div>
+                    <div class="col-1 offset-1 pad0">10</div>
+                </div>
+                <div class="row" style="height: 100%; padding-bottom: 10px;">
+                    <div id="A_6" class="col-1 offset-1 black {% if ch6 == "1" %}active{% endif %}"></div>
+                    <div id="A_7" class="col-1 offset-1 black {% if ch7 == "1" %}active{% endif %}"></div>
+                    <div id="A_8" class="col-1 offset-1 black {% if ch8 == "1" %}active{% endif %}"></div>
+                    <div id="A_9" class="col-1 offset-1 black {% if ch9 == "1" %}active{% endif %}"></div>
+                    <div id="A_10" class="col-1 offset-1 black {% if ch10 == "1" %}active{% endif %}"></div>
+                </div>
+                <div class="row" style="height: 100%">
+                    <div id="B_6" class="col-1 offset-1 black {% if cg6 == "1" %}active{% endif %}"></div>
+                    <div id="B_7" class="col-1 offset-1 black {% if cg7 == "1" %}active{% endif %}"></div>
+                    <div id="B_8" class="col-1 offset-1 black {% if cg8 == "1" %}active{% endif %}"></div>
+                    <div id="B_9" class="col-1 offset-1 black {% if cg9 == "1" %}active{% endif %}"></div>
+                    <div id="B_10" class="col-1 offset-1 black {% if cg10 == "1" %}active{% endif %}"></div>
+                </div>
+            </div>
+        </div>
+{#     A - B   11 - 15#}
+        {% if seat == 15 %}
+            <div class="col-md-4 col-6">
+            <div class="col-12">
+                <div class="row" align="center">
+                    <div id="B_11" class="col-1 offset-md-1 offset-3 pad0">11</div>
+                    <div id="B_12" class="col-1 offset-1 pad0">12</div>
+                    <div id="B_13" class="col-1 offset-1 pad0">13</div>
+                    <div id="B_14" class="col-1 offset-1 pad0">14</div>
+                    <div id="B_15" class="col-1 offset-1 pad0">15</div>
+                </div>
+                <div class="row" style="height: 100%; padding-bottom: 10px;">
+                    <div class="col-1 offset-1 d-md-none" style="padding: 0">A</div>
+                    <div id="A_11" class="col-1 offset-md-1 offset-1 black {% if ch11 == "1" %}active{% endif %}"></div>
+                    <div id="A_12" class="col-1 offset-1 black {% if ch12 == "1" %}active{% endif %}"></div>
+                    <div id="A_13" class="col-1 offset-1 black {% if ch13 == "1" %}active{% endif %}"></div>
+                    <div id="A_14" class="col-1 offset-1 black {% if ch14 == "1" %}active{% endif %}"></div>
+                    <div id="A_15" class="col-1 offset-1 black {% if ch15 == "1" %}active{% endif %}"></div>
+                </div>
+                <div class="row" style="height: 100%">
+                    <div class="col-1 offset-1 d-md-none" style="padding: 0">B</div>
+                    <div class="col-1 offset-1 black {% if cg11 == "1" %}active{% endif %}"></div>
+                    <div class="col-1 offset-1 black {% if cg12 == "1" %}active{% endif %}"></div>
+                    <div class="col-1 offset-1 black {% if cg13 == "1" %}active{% endif %}"></div>
+                    <div class="col-1 offset-1 black {% if cg14 == "1" %}active{% endif %}"></div>
+                    <div class="col-1 offset-1 black {% if cg15 == "1" %}active{% endif %}"></div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if kol == 5 %}
+        <div class="row" style="padding-bottom: 20px; border-bottom: 1px solid black;"  >
+{#     C - D   1 5#}
+        <div class="col-md-4 col-6">
+            <div class="col-12">
+                <div class="row d-md-none" align="center">
+                    <div class="col-1 offset-3 pad0">1</div>
+                    <div class="col-1 offset-1 pad0">2</div>
+                    <div class="col-1 offset-1 pad0">3</div>
+                    <div class="col-1 offset-1 pad0">4</div>
+                    <div class="col-1 offset-1 pad0">5</div>
+                </div>
+                <div class="row" style="height: 100%; padding-bottom: 10px">
+                    <div class="col-1 offset-1" style="padding: 0">C</div>
+                    <div id="C_1" class="col-1 offset-1 black blackP {% if cf1 == "1" %}active{% endif %}"></div>
+                    <div id="C_2" class="col-1 offset-1 black blackP {% if cf2 == "1" %}active{% endif %}"></div>
+                    <div id="C_3" class="col-1 offset-1 black {% if cf3 == "1" %}active{% endif %}"></div>
+                    <div id="C_4" class="col-1 offset-1 black {% if cf4 == "1" %}active{% endif %}"></div>
+                    <div id="C_5" class="col-1 offset-1 black {% if cf5 == "1" %}active{% endif %}"></div>
+                </div>
+                <div class="row" style="height: 100%">
+                    <div class="col-1 offset-1" style="padding: 0">D</div>
+                    <div id="D_1" class="col-1 offset-1 black blackP {% if cd1 == "1" %}active{% endif %}"></div>
+                    <div id="D_2" class="col-1 offset-1 black blackP {% if cd2 == "1" %}active{% endif %}"></div>
+                    <div id="D_3" class="col-1 offset-1 black {% if cd3 == "1" %}active{% endif %}"></div>
+                    <div id="D_4" class="col-1 offset-1 black {% if cd4 == "1" %}active{% endif %}"></div>
+                    <div id="D_5" class="col-1 offset-1 black {% if cd5 == "1" %}active{% endif %}"></div>
+                </div>
+            </div>
+        </div>
+{#     C - D   6 - 10#}
+        <div class="col-md-4 col-6">
+            <div class="col-12">
+                <div class="row d-md-none" align="center">
+                    <div class="col-1 offset-1 pad0">6</div>
+                    <div class="col-1 offset-1 pad0">7</div>
+                    <div class="col-1 offset-1 pad0">8</div>
+                    <div class="col-1 offset-1 pad0">9</div>
+                    <div class="col-1 offset-1 pad0">10</div>
+                </div>
+                <div class="row" style="height: 100%; padding-bottom: 10px;">
+                    <div id="C_6" class="col-1 offset-1 black {% if cf6 == "1" %}active{% endif %}"></div>
+                    <div id="C_7" class="col-1 offset-1 black {% if cf7 == "1" %}active{% endif %}"></div>
+                    <div id="C_8" class="col-1 offset-1 black {% if cf8 == "1" %}active{% endif %}"></div>
+                    <div id="C_9" class="col-1 offset-1 black {% if cf9 == "1" %}active{% endif %}"></div>
+                    <div id="C_10" class="col-1 offset-1 black {% if cf10 == "1" %}active{% endif %}"></div>
+                </div>
+                <div class="row" style="height: 100%">
+                    <div id="D_6" class="col-1 offset-1 black {% if cd6 == "1" %}active{% endif %}"></div>
+                    <div id="D_7" class="col-1 offset-1 black {% if cd7 == "1" %}active{% endif %}"></div>
+                    <div id="D_8" class="col-1 offset-1 black {% if cd8 == "1" %}active{% endif %}"></div>
+                    <div id="D_9" class="col-1 offset-1 black {% if cd9 == "1" %}active{% endif %}"></div>
+                    <div id="D_10" class="col-1 offset-1 black {% if cd10 == "1" %}active{% endif %}"></div>
+             </div>
+            </div>
+        </div>
+{#     C - D   11 - 15#}
+        {% if seat == 15 %}
+            <div class="col-md-4 col-6">
+            <div class="col-12">
+                <div class="row d-md-none" align="center">
+                    <div class="col-1 offset-3 pad0">11</div>
+                    <div class="col-1 offset-1 pad0">12</div>
+                    <div class="col-1 offset-1 pad0">13</div>
+                    <div class="col-1 offset-1 pad0">14</div>
+                    <div class="col-1 offset-1 pad0">15</div>
+                </div>
+                <div class="row" style="height: 100%; padding-bottom: 10px;">
+                    <div class="col-1 offset-1 d-md-none" style="padding: 0">С</div>
+                    <div id="C_11" class="col-1 offset-1 black {% if cf11 == "1" %}active{% endif %}"></div>
+                    <div id="C_12" class="col-1 offset-1 black {% if cf12 == "1" %}active{% endif %}"></div>
+                    <div id="C_13" class="col-1 offset-1 black {% if cf13 == "1" %}active{% endif %}"></div>
+                    <div id="C_14" class="col-1 offset-1 black {% if cf14 == "1" %}active{% endif %}"></div>
+                    <div id="C_15" class="col-1 offset-1 black {% if cf15 == "1" %}active{% endif %}"></div>
+                </div>
+                <div class="row" style="height: 100%">
+                    <div class="col-1 offset-1 d-md-none" style="padding: 0">D</div>
+                    <div id="D_11" class="col-1 offset-1 offset-md-1 black {% if cd11 == "1" %}active{% endif %}"></div>
+                    <div id="D_12" class="col-1 offset-1 black {% if cd12 == "1" %}active{% endif %}"></div>
+                    <div id="D_13" class="col-1 offset-1 black {% if cd13 == "1" %}active{% endif %}"></div>
+                    <div id="D_14" class="col-1 offset-1 black {% if cd14 == "1" %}active{% endif %}"></div>
+                    <div id="D_15" class="col-1 offset-1 black {% if cd15 == "1" %}active{% endif %}"></div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="row" style="padding-top: 20px">
+        <div class="col-12 col-md-4">
+            <div class="row">
+                <div class="offset-1 col-1 pd_0" style="background-color: black;"></div>
+                <div class="row offset-1 col-9" style="font-size: 130%"> - {{ price }} грн. X <div id="ob">0</div></div>
+                <div class="d-none" id="prc1">{{ price }}</div>
+                <div class="d-none" id="prc2">{{ price2 }}</div>
+            </div>
+            <div class="row" style="padding-top: 10px">
+                <div class="offset-1 col-1 pd_0" style="background-color: darkred;"></div>
+                 <div class="row offset-1 col-9" style="font-size: 130%"> - {{ price2 }} грн. X <div id="pl">0</div></div>
+            </div>
+            <div class="row" style="padding-top: 10px">
+                <div class="row col-12 price_bil" style="margin-left: 0">Стоимость:&nbsp;<div id="pr">0</div>&nbsp;грн</div>
+            </div>
+        </div>
+        <div class="col-12 offset-md-8 col-md-4"><button class="btn vibor">Выбрать</button></div>
+
+    </div>
+</div>

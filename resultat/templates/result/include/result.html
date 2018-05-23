@@ -1,0 +1,181 @@
+{% load staticfiles %}
+<div class="container-fluid main" id="forH">
+    <div class="row" style="padding: 10px; padding-bottom: 0;">
+        <div class="col-12 where">
+            <h4>{{ countryOtPyc }} ({{ short_otk }}) в {{ countryKydPyc }} ({{ short_kyd }})</h4>
+        </div>
+    </div>
+    <div class="row tct where"  id="hed_" style="margin-left: 0; margin-right: 0;">
+        <div class="col-12 hed">
+            <div class="row" style="height:  100%;">
+                <div class="col-12">
+                    <div class="row forBS" style="height:  100%;">
+                        <div id="avt" onclick="res(1); return false;" class="col-4 imIT"
+                             style="border-right: 1px solid silver; background-image: url({% static 'img/bus2.png' %});"></div>
+                        <div id="sam" onclick="res(2); return false;" class="col-4 imIT"
+                             style="background-image: url({% static 'img/plane2.png' %});"></div>
+                        <div id="jd" onclick="res(3); return false;" class="col-4 imIT"
+                             style="border-left: 1px solid silver;background-image: url({% static 'img/train2.png' %});"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 bilet" id="bil_">
+            {% if day10|length > 0 %}
+                <div id="t1" class="row tct1 {{ type0 }}">
+                    <div id="t01" class="container-fluid row"
+                         onclick="go_bilet('{{ ot0 }}', '{{ countryKydPyc }}', '{{ price0 }}', 1); return false;">
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-3" align="left">
+                                    <div class="d-block d-md-none bl_t">{{ time10 }} {{ day10 }}</div>
+                                    <div class="d-none d-md-block elite">
+                                        <div class="timeT">{{ time10 }}</div>
+                                        <div class="chisloT">{{ day10 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="pdd">{{ adress_otpr0 }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-3" align="left">
+                                    <div class="d-block d-md-none bl_t">{{ time20 }} {{ day20 }}</div>
+                                    <div class="d-none d-md-block elite">
+                                        <div class="timeT">{{ time20 }}</div>
+                                        <div class="chisloT">{{ day20 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="pdd">{{ adress_priv0 }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-4 reis d-none d-md-block">
+                                    <div class="col-12 pdd">
+                                        <div>Отправка</div>
+                                        {{ type0 }}
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12">
+                                    <div class="col-12">
+                                        <div class="price pdd">{{ price0 }} грн</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if day11|length > 0 %}
+                <div id="t2" class="row tct1 {{ type1 }}">
+                    <div id="t02" class="container-fluid row" onclick="go_bilet('{{ ot1 }}', '{{ countryKydPyc }}', '{{ price1 }}', 2); return false;">
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-3" align="left">
+                                    <div class="d-block d-md-none bl_t">{{ time11 }} {{ day11 }}</div>
+                                    <div class="d-none d-md-block elite">
+                                        <div class="timeT">{{ time11 }}</div>
+                                        <div class="chisloT">{{ day11 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="pdd">{{ adress_otpr1 }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-3" align="left">
+                                    <div class="d-block d-md-none bl_t">{{ time21 }} {{ day21 }}</div>
+                                    <div class="d-none d-md-block elite">
+                                        <div class="timeT">{{ time21 }}</div>
+                                        <div class="chisloT">{{ day21 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="pdd">{{ adress_priv1 }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-4 reis d-none d-md-block">
+                                    <div class="col-12 pdd">
+                                        <div>Отправка</div>
+                                        {{ type1 }}
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12">
+                                    <div class="col-12">
+                                        <div class="price pdd">{{ price1 }} грн</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if day12|length > 0 %}
+                <div id="t3" class="row tct1 {{ type2 }}">
+                    <div id="t03" class="container-fluid row" onclick="go_bilet('{{ ot2 }}', '{{ countryKydPyc }}', '{{ price2 }}', 3); return false;">
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-3" align="left">
+                                    <div class="d-block d-md-none bl_t">{{ time12 }} {{ day12 }}</div>
+                                    <div class="d-none d-md-block elite">
+                                        <div class="timeT">{{ time12 }}</div>
+                                        <div class="chisloT">{{ day12 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="pdd">{{ adress_otpr2 }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-3" align="left">
+                                    <div class="d-block d-md-none bl_t">{{ time22 }} {{ day22 }}</div>
+                                    <div class="d-none d-md-block elite">
+                                        <div class="timeT">{{ time22 }}</div>
+                                        <div class="chisloT">{{ day22 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="pdd">{{ adress_priv2 }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-12">
+                            <div class="row rr">
+                                <div class="col-md-4 reis d-none d-md-block">
+                                    <div class="col-12 pdd">
+                                        <div>Отправка</div>
+                                        {{ type2 }}
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-12">
+                                    <div class="col-12">
+                                        <div class="price pdd">{{ price2 }} грн</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
