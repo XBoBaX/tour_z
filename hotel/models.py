@@ -13,3 +13,7 @@ class Hotel(models.Model):
 
     def __str__(self):
         return "{0}_{1}".format(self.nameCity, self.price_one_pers_day)
+
+    class Meta:
+        verbose_name = u"Отели"
+        verbose_name_plural = u"Отели"

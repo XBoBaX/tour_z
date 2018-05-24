@@ -46,9 +46,8 @@ function res(ind) {
 
 price = sum_pr = total = pr_kol_vies = 0;
 hotelName = otelH = "";
-priceVis1 = 0;
+priceVis1 = day_ot = 0;
 json2_exc = {};
-day_ot = 0;
 
 function select(id) {
     idP = '#blur' + id;
@@ -67,12 +66,10 @@ function select(id) {
         json2_exc[id] = '0';
         json2_exc['t' + id] = '0';
         if (check) sum_pr -= sum_2;
-
     }
     else {
         $(idP).css('filter', 'blur(2px)');
         $(idB).html("Убрать");
-
         sum_pr += sum_1;
         json2_exc[id] = '1';
         if (check) {
@@ -95,7 +92,6 @@ function excursions(str, day, total) {
         data: {'ot': ot_, 'kyd': kyd_, 'price': price_, 'price_H': price_H, 'kol': kolvo},
         cache: false,
         success: function (data) {
-
             $('.ht').remove();
             $('#forH').append(data);
             $("#spinner").css("display", "none");
@@ -106,21 +102,18 @@ function excursions(str, day, total) {
                 bil += " " + ch;
                 i++;
             }
-
             $('#kolvo').html('Количество человек: ' + kolvo);
             $('#bilets').html('Билеты на места:' + bil);
             $('#bilets_price').html('Стоимость всех билетов: ' + sum + " грн");
             $('#exc_').html('Экскурсии и трансферы: 0');
             ot = $('#ot').html();
             $('#vis').addClass('d-none');
-
             priceVis1 = Number($('#priceVis').html());
             total = Number(sum) + Number(ot) + Number(sum_pr);
             $('#vsego').html('Всего: ' + total + " грн");
             jQuery(document).ready(function ($) {
                 //Оканчательный чек
                 $('.btnOl').click(function () {
-
                     $("#spinner").css("display", "block");
                     a = setTimeout('$("#spinner").css("display","none");', 8000);
                     $.ajax({

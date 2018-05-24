@@ -10,3 +10,7 @@ class excursions(models.Model):
 
     def __str__(self):
         return "{0}_{1}".format(self.toLoc, self.name)
+
+    class Meta:
+        verbose_name = u"Экскурсии"
+        verbose_name_plural = u"Экскурсии"

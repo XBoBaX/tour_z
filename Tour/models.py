@@ -17,6 +17,10 @@ class InfoTour(models.Model):
     back_date = models.DateTimeField(verbose_name="Время возвращения")
     json1 = models.TextField()
 
+    class Meta:
+        verbose_name = u"Билеты"
+        verbose_name_plural = u"Билеты"
+
     def __str__(self):
         return "{0} в {1}".format(self.fromLoc, self.toLoc)
 

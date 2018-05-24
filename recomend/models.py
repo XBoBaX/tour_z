@@ -12,3 +12,7 @@ class Reklama(models.Model):
 
     def __str__(self):
         return "Для {0}. {1}".format(self.idCoun, self.city)
+
+    class Meta:
+        verbose_name = u"Рекламные туры"
+        verbose_name_plural = u"Рекламные туры"

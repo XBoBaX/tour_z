@@ -29,3 +29,7 @@ class Tour(models.Model):
         tk.save()
     def __str__(self):
         return "{0}_{1}".format(self.user, self.total_price)
+
+    class Meta:
+        verbose_name = u"Купленные туры"
+        verbose_name_plural = u"Купленные туры"
