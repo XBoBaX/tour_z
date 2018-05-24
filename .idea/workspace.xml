@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="978b0eeb-ac33-4bca-bb5d-54c43c28e7c8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tour/static/js/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tour/static/js/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tour/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tour/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dokument/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dokument/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exc/templates/exc/include/exc.html" beforeDir="false" afterPath="$PROJECT_DIR$/exc/templates/exc/include/exc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/static/js/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/static/js/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recomend/templates/recomend/includes/recomend.html" beforeDir="false" afterPath="$PROJECT_DIR$/recomend/templates/recomend/includes/recomend.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultat/static/js/res.js" beforeDir="false" afterPath="$PROJECT_DIR$/resultat/static/js/res.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultat/templates/result/include/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/resultat/templates/result/include/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
-    </list>
+    <list default="true" id="978b0eeb-ac33-4bca-bb5d-54c43c28e7c8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +42,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tour/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="12" column="75" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="75" />
+            <state relative-caret-position="105">
+              <caret line="381" column="37" selection-start-line="381" selection-start-column="34" selection-end-line="381" selection-end-column="37" />
               <folding>
                 <element signature="e#1298#2740#0" />
               </folding>
@@ -80,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visa/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="85" />
+              <caret line="97" column="121" selection-start-line="97" selection-start-column="121" selection-end-line="97" selection-end-column="121" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -104,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="res.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="res.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resultat/static/js/res.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
+            <state relative-caret-position="234">
               <caret line="145" column="51" selection-start-line="145" selection-start-column="51" selection-end-line="145" selection-end-column="51" />
               <folding>
                 <element signature="n#!!block;n#res#0" />
@@ -120,8 +107,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dokument/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="493" column="43" selection-start-line="493" selection-start-column="43" selection-end-line="493" selection-end-column="43" />
+            <state relative-caret-position="105">
+              <caret line="492" column="122" lean-forward="true" selection-start-line="492" selection-start-column="77" selection-end-line="492" selection-end-column="122" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -143,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Sh</find>
       <find>get_ch</find>
       <find>load</find>
       <find>get_r</find>
@@ -161,7 +147,6 @@
       <find>mouse</find>
       <find>get_c</find>
       <find>kol</find>
-      <find>api</find>
       <find>pr_kol_vies</find>
       <find>priceVis1</find>
       <find>ale</find>
@@ -173,6 +158,8 @@
       <find>'#spinner'</find>
       <find>#spinner</find>
       <find>spinner</find>
+      <find>googleapis.com/maps/api</find>
+      <find>api</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,7 +171,6 @@
         <option value="$PROJECT_DIR$/recomend/static/css/recomend.css" />
         <option value="$PROJECT_DIR$/visa/urls.py" />
         <option value="$PROJECT_DIR$/visa/admin.py" />
-        <option value="$PROJECT_DIR$/visa/views.py" />
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/admin/templates/admin/change_list.html" />
         <option value="$PROJECT_DIR$/visa/models.py" />
         <option value="$PROJECT_DIR$/counryVisa/models.py" />
@@ -232,6 +218,7 @@
         <option value="$PROJECT_DIR$/dokument/views.py" />
         <option value="$PROJECT_DIR$/exc/templates/exc/include/exc.html" />
         <option value="$PROJECT_DIR$/resultat/static/js/res.js" />
+        <option value="$PROJECT_DIR$/visa/views.py" />
       </list>
     </option>
   </component>
@@ -510,6 +497,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32972136" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
@@ -868,31 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tour/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="75" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="75" />
-          <folding>
-            <element signature="e#1298#2740#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dokument/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="493" column="43" selection-start-line="493" selection-start-column="43" selection-end-line="493" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dokument/templates/dokument/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-235" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tour/static/js/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -904,16 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visa/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -929,11 +882,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resultat/static/js/res.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
+        <state relative-caret-position="234">
           <caret line="145" column="51" selection-start-line="145" selection-start-column="51" selection-end-line="145" selection-end-column="51" />
           <folding>
             <element signature="n#!!block;n#res#0" />
             <element signature="n#!!block;n#select#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dokument/templates/dokument/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-235" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tour/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="381" column="37" selection-start-line="381" selection-start-column="34" selection-end-line="381" selection-end-column="37" />
+          <folding>
+            <element signature="e#1298#2740#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dokument/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="492" column="122" lean-forward="true" selection-start-line="492" selection-start-column="77" selection-end-line="492" selection-end-column="122" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visa/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="97" column="121" selection-start-line="97" selection-start-column="121" selection-end-line="97" selection-end-column="121" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

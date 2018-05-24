@@ -95,7 +95,7 @@ def posol(html, country):
 
     i = 0
     while i != 3:
-        urlA = "http://maps.googleapis.com/maps/api/geocode/json?language=en&address="
+        urlA = "http://maps.googleapis.com/maps/api/geocode/json?language=en&key=AIzaSyA63s8o34G43tmsyJ3FrArfwB5XuRsGPtM&address="
         if country.strip() == "ПАР":
             urlA += urllib.parse.quote("South Africa")
         else:
