@@ -106,19 +106,23 @@ function excursions(str, day, total) {
                 bil += " " + ch;
                 i++;
             }
+
             $('#kolvo').html('Количество человек: ' + kolvo);
             $('#bilets').html('Билеты на места:' + bil);
             $('#bilets_price').html('Стоимость всех билетов: ' + sum + " грн");
             $('#exc_').html('Экскурсии и трансферы: 0');
             ot = $('#ot').html();
+            $('#vis').addClass('d-none');
 
-
-            priceVis1 = Number($('#priceVis').html()) * kolvo;
+            priceVis1 = Number($('#priceVis').html());
             total = Number(sum) + Number(ot) + Number(sum_pr);
             $('#vsego').html('Всего: ' + total + " грн");
             jQuery(document).ready(function ($) {
                 //Оканчательный чек
                 $('.btnOl').click(function () {
+
+                    $("#spinner").css("display", "block");
+                    a = setTimeout('$("#spinner").css("display","none");', 8000);
                     $.ajax({
                         type: "GET",
                         url: "/doc/form/get_res/",
@@ -134,11 +138,12 @@ function excursions(str, day, total) {
                         },
                         cache: false,
                         success: function (data) {
-                            if (data === 'ok'){
-                                document.location.href = "/";
+                            $("#spinner").css("display", "none");
+                            if (data === 'ok') {
+                                document.location.href = "/my/tour/";
                             }
-                            if (data == "no"){
-
+                            if (data == "no") {
+                                $('#vhod').click();
                             }
                         }
                     });
@@ -150,6 +155,26 @@ function excursions(str, day, total) {
                     str = "Экскурсии и трансферы: " + sum_pr + " грн";
                     $('#exc_').html(str);
                     total = Number(sum) + Number(ot) + Number(sum_pr);
+                    $('#vsego').html('Всего: ' + total + " грн");
+                });
+                $('#kolViz').keyup(function () {
+                    kol_vises = $('#kolViz').val();
+                    total -= pr_kol_vies;
+                    pr_kol_vies = kol_vises * priceVis1;
+                    total += pr_kol_vies;
+                    if (kol_vises == 0) {
+                        $('#vis').addClass('d-none');
+                        $('#btnOl').removeClass('disabled');
+                    }
+                    else {
+                        $('#vis').removeClass('d-none');
+                        ysp = $('.ysp').html();
+                        if (ysp == "Вы успеете") {
+                            $('#btnOl').removeClass('disabled');
+                        }
+                        else $('#btnOl').addClass('disabled');
+                    }
+
                     $('#vsego').html('Всего: ' + total + " грн");
                 });
                 $('#kolViz').change(function () {
@@ -178,7 +203,6 @@ function excursions(str, day, total) {
     });
 }
 
-
 ot_ = kolvo = kyd_ = price_ = "";
 sum = 0;
 json1 = {};
@@ -188,7 +212,7 @@ function go_bilet(ot, kyd, price, ind) {
     json1 = {};
     total = sum = 0;
     $("#spinner").css("display", "block");
-    a = setTimeout('$("#spinner").css("display","none");', 5000);
+    a = setTimeout('$("#spinner").css("display","none");', 8000);
     price_ = price;
     ot_ = ot;
     kyd_ = kyd;
@@ -198,7 +222,6 @@ function go_bilet(ot, kyd, price, ind) {
         data: {'ot': ot, 'kyd': kyd, 'price': price},
         cache: false,
         success: function (data) {
-            $('#spinner').css("display", "none");
             if (ind === 1) {
                 $('#t01').addClass('d-none');
                 $('#t02').removeClass('d-none');
@@ -229,7 +252,7 @@ function go_bilet(ot, kyd, price, ind) {
                 $('#t1').removeClass('select');
                 $('#t2').removeClass('select');
             }
-
+            $('#spinner').css("display", "none");
             jQuery(document).ready(function ($) {
                 prc1 = Number($('#prc1').html());
                 prc2 = Number($('#prc2').html());
@@ -287,10 +310,10 @@ function go_bilet(ot, kyd, price, ind) {
                         data: {'kyd': kyd_, 'kol': kolvo, 'day': day},
                         cache: false,
                         success: function (data) {
-                            $("#spinner").css("display", "none");
                             $('#bil_').remove();
                             $('#hed_').remove();
                             $('#forH').append(data);
+                            $("#spinner").css("display", "none");
 
                         }
                     });

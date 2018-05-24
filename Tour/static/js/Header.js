@@ -39,16 +39,17 @@ if (window.location.pathname.indexOf("my") !== -1) { $('#glav, #tyri, #abAs, #vi
             $(vhod).removeClass('active');
         }
     }
-    $(document).mouseup(function (e) {
+    $(document).mousedown(function (e) {
         var container = $('#divId');
-        if (container.has(e.target).length === 0){
+        // if (container.has(e.target)) alert(container.has(e.target));
+        if (!container.is(e.target) && container.has(e.target).length === 0){
             $(container).animate({height: 'hide'}, 200);
             $('#vhod').removeClass('active');
         }
     });
-    $(document).mouseup(function (e) {
+    $(document).mousedown(function (e) {
         var container = $('#divId2');
-        if (container.has(e.target).length === 0){
+        if (!container.is(e.target) && container.has(e.target).length === 0){
             $(container).animate({height: 'hide'}, 200);
             $('#vihod').removeClass('active');
         }

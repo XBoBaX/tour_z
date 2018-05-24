@@ -46,7 +46,7 @@ def edited(request):
     user.mail = request.POST.get('mail', '')
     user.location = request.POST.get('location', '')
     if user.location.__len__() < 1:
-        user.location = "Россия"
+        user.location = "Турция"
     if request.POST.get('birth_date').__len__() > 0:
         user.birth_date = request.POST.get('birth_date', '2000-01-01')
     user.male = request.POST.get('male', '')

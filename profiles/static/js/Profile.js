@@ -1,7 +1,7 @@
-$.get("https://ipinfo.io", function(response) {
-    $('#con').val(response.country);
-    console.log(response.country);
-}, "jsonp");
+// $.get("https://ipinfo.io", function(response) {
+//     $('#con').val(response.country);
+//     console.log(response.country);
+// }, "jsonp");
 
 function editClick() {
      if (!($('#edit').hasClass('d-none'))){

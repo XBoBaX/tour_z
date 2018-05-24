@@ -10,8 +10,8 @@
 
             {% if vises != "не нужна" %}
                 <div class="col-12" id="exc_">Консульский сбор (1 человек): {{ price_vs }} грн</div>
-                {% if kol > 1 %}
-                    <div class="col-12 col-md-4"><input id="kolViz" type="number" min="0" max="{{ kol }}" placeholder="Сколько виз нужно"></div>
+                {% if kol > 0 %}
+                    <div class="col-12 col-md-4"><input  id="kolViz" type="number"  min="0" max="{{ kol }}" placeholder="Сколько виз нужно оформить"></div>
                 {% endif %}
                 <div class="d-none" id="priceVis">{{ price_vs }}</div>
             {% endif %}
@@ -37,7 +37,7 @@
                 {% if days > 0 %}
                     <div class="col-12 ysp">Вы успеете</div>
                 {% else %}
-                    <div class="col-12 ysp">{{ days }}</div>
+                    <div class="col-12 ysp">{{ days }} дней</div>
                     <div class="col-12" style="font-weight: bold; font-size: 120%">Необходимо еще</div>
                 {% endif %}
             </div>

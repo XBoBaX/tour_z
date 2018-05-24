@@ -14,7 +14,7 @@ def about(request1):
 
 
 def index(request):
-    cntr = "Россия"
+    cntr = "Турция"
     if auth.get_user(request).username.__len__() > 0:
         pr = Profile.objects.get(user=User.objects.get(username=auth.get_user(request).username))
         cntr = pr.location

@@ -2,7 +2,7 @@
 <div class="container-fluid main" id="forH">
     <div class="row" style="padding: 10px; padding-bottom: 0;">
         <div class="col-12 where">
-            <h4>{{ countryOtPyc }} ({{ short_otk }}) в {{ countryKydPyc }} ({{ short_kyd }})</h4>
+            <h4>{% if countryOtPyc|length > 0 %}{{ countryOtPyc }} ({{ short_otk }}) - {% endif %} {{ countryKydPyc }} ({{ short_kyd }})</h4>
         </div>
     </div>
     <div class="row tct where"  id="hed_" style="margin-left: 0; margin-right: 0;">

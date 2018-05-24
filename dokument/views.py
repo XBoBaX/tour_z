@@ -91,7 +91,7 @@ def get_check(request1):
         date2 = datetime.now() + timedelta(days=datetime.strptime(json_vis['min_term'], '%d').day)
         date1 = datetime.strptime(date1, '%Y-%m-%d')
         day = date1 - date2
-        day = day.days
+        day = abs(day.days)
         pr_grn = (int(json_vis['price']) * 26)
     message = render_to_string('exc/include/exc.html',
                                {'list': list, 'vises': json_vis['vises'], 'price_vs': pr_grn,
@@ -397,7 +397,9 @@ def index(request1):
     print(NameEngCountry_prib)
     if json_return['min_term'].__len__() > 0:
         d_nado = datetime.today() + timedelta(days=int(json_return['min_term']))
-        if d_nado > dReal:
+        d_nado = d_nado.strftime("%Y-%m-%d")
+        d_nado = datetime.strptime(d_nado, "%Y-%m-%d")
+        if d_nado > dReal and d_nado != dReal:
             print("Не успеешь")
             suc = "false"
         else:
@@ -488,7 +490,7 @@ def json_get(country):
     print("_______________")
     kol = 0
     while kol != 3:
-        urlA = "https://maps.googleapis.com/maps/api/geocode/json?language=en&address="
+        urlA = "https://maps.googleapis.com/maps/api/geocode/json?language=en&key=AIzaSyA63s8o34G43tmsyJ3FrArfwB5XuRsGPtM&address="
         urlA += urllib.parse.quote(country)
         url = urllib.request.urlopen(urlA)
         temp = json.loads(url.read().decode())
@@ -496,6 +498,7 @@ def json_get(country):
             kol += 1
             print(temp)
             print(country)
+            print(urlA)
             time.sleep(4)
             if kol >= 3:
                 if temp['status'] != 'OK':
