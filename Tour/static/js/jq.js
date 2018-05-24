@@ -6,20 +6,20 @@ $('#vr_pr').val(now);
 jQuery(document).ready(function ($) {
     $('#formVhod').submit(function (e) {
         e.preventDefault();
+        $("#spinner").css("display", "block");
+        a = setTimeout('$("#spinner").css("display","none");', 8000);
         var data = $(this).serialize();
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: "/auth/login/",
             data: data,
             cache: false,
             success: function (data) {
-                if (data == 'ok') {
-                    location.reload();
-                    // $('#ak').html(data);
+                if (data == "non"){
+                    $('#error-login').html("Неверный логин/пароль!");
                 }
-                else {
-                    $('#error-login').html(data);
-                }
+                else $('header').replaceWith(data);
+                $("#spinner").css("display", "none");
             }
         });
     });
@@ -246,18 +246,25 @@ $(document).mouseup(function (e) {
 $('#formReg').submit(function (e) {
     e.preventDefault();
     var data = $(this).serialize();
+    $("#spinner").css("display", "block");
+    a = setTimeout('$("#spinner").css("display","none");', 8000);
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "/auth/register/",
         data: data,
         cache: false,
         success: function (data) {
-            if (data == 'ok') {
-                window.location.href = '/my/account/';
-            }
+            if (data.length > 100) $('header').replaceWith(data);
             else {
-                $('#error-login2').html(data);
+                str = data;
+                if (data == "username") str = "Некорректный логин";
+                if (data == "password2username" || data == "password1password2username" || data == "usernamepassword2") str = "Некорректный логин и пароль";
+                if (data == "password1password2") str = "Некорректный пароль";
+                if (data == "password1" || data == "password2") str = "Не совпадают пароли";
+                $('#error-login2').html(str);
             }
+            $("#spinner").css("display", "none");
+
         }
     });
 });
@@ -303,7 +310,6 @@ $('#bil').submit(function (e) {
         data: data,
         cache: false,
         success: function (data) {
-            // alert(data);
             $('#res').html(data);
             var top = $('#res').offset().top - 60;
             $('body,html').animate({scrollTop: top}, 1000);

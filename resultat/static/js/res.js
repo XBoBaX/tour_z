@@ -48,6 +48,7 @@ price = sum_pr = total = pr_kol_vies = 0;
 hotelName = otelH = "";
 priceVis1 = day_ot = 0;
 json2_exc = {};
+dok_days = 0;
 
 function select(id) {
     idP = '#blur' + id;
@@ -102,6 +103,7 @@ function excursions(str, day, total) {
                 bil += " " + ch;
                 i++;
             }
+            dok_days = $('#days_for_doc').html();
             $('#kolvo').html('Количество человек: ' + kolvo);
             $('#bilets').html('Билеты на места:' + bil);
             $('#bilets_price').html('Стоимость всех билетов: ' + sum + " грн");
@@ -112,8 +114,47 @@ function excursions(str, day, total) {
             total = Number(sum) + Number(ot) + Number(sum_pr);
             $('#vsego').html('Всего: ' + total + " грн");
             jQuery(document).ready(function ($) {
+                $('#pasp').change(function () {
+                   pasp1 = $('#pasp').prop("checked");
+                   if (!pasp1) {
+                       if (dok_days > 20) total += 252;
+                       else if (dok_days > 3) total += 557;
+                       else $('#error_suc_pas').html("Оформление паспорта в срочном порядке займет 3 дня. У вас их " + dok_days);
+                   }
+                   else {
+                       if (dok_days > 20) total -= 252;
+                       else if (dok_days > 3) total -= 557;
+                       else $('#error_suc_pas').html("");
+                   }
+                   $('#vsego').html('Всего: ' + total + " грн");
+                });
+                $('#Zpasp').change(function () {
+                   zag = $('#Zpasp').prop("checked");
+                   if (!zag) {
+                       if (dok_days > 20) total += 557;
+                       else total += 810;
+                   }
+                   else {
+                       if (dok_days > 20) total -= 957;
+                       else total -= 1210;
+                   }
+                   $('#vsego').html('Всего: ' + total + " грн");
+                });
+                $('#iin').change(function () {
+                   iin = $('#iin').prop("checked");
+                   if (!iin) {
+                       if (dok_days < 7){
+                           $('#error_suc').html("ИНН оформляется в течении 7 дней. За " + dok_days + " можно не успеть")
+                       }
+                   }
+                   else {
+                   }
+                });
                 //Оканчательный чек
                 $('.btnOl').click(function () {
+                    pasp = $('#pasp').prop("checked");
+                    zpasp = $('#Zpasp').prop("checked");
+                    iin = $('#iin').prop("checked");
                     $("#spinner").css("display", "block");
                     a = setTimeout('$("#spinner").css("display","none");', 8000);
                     $.ajax({
@@ -127,7 +168,11 @@ function excursions(str, day, total) {
                             'json_exc': JSON.stringify(json2_exc),
                             'kolvo': kolvo,
                             'otel_n': otelH,
-                            'day_ot': day_ot
+                            'day_ot': day_ot,
+                            'pasp': pasp,
+                            'zpasp': zpasp,
+                            'iin': iin,
+                            'dok_days': dok_days
                         },
                         cache: false,
                         success: function (data) {

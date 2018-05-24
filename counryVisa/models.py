@@ -7,6 +7,7 @@ class Country(models.Model):
     document = models.TextField(default="Не надо", verbose_name='Документы для визы')
     term_tourism = models.CharField(max_length=200, verbose_name='Срок изготовление')
     price = models.IntegerField(verbose_name='цена визы в $', default=50)
+
     nameVisa2 = models.CharField(max_length=200, verbose_name='Название визы2')
     document2 = models.TextField(default="Не надо", verbose_name='Документы для визы2')
     term_tourism2 = models.CharField(max_length=200, verbose_name='Срок изготовление2')
@@ -15,6 +16,7 @@ class Country(models.Model):
     document3 = models.TextField(default="Не надо", verbose_name='Документы для визы3')
     term_tourism3 = models.CharField(max_length=200, verbose_name='Срок изготовление3')
     price3 = models.IntegerField(verbose_name='цена визы в $3', default=50)
+
 
     def checkIt(self):
         self.save()

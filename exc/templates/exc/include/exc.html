@@ -6,16 +6,37 @@
             <div class="col-12" id="bilets_price"></div>
             <div class="col-12">Стоимость отеля: {{ price_H }} грн</div>
             <div class="d-none" id="ot">{{ price_H }}</div>
-            <div class="col-12" id="exc_">Экскурсии и трансферы: 0</div>
+            <div class="col-12" id="exc_">Экскурсии {{ days }} и трансферы: 0</div>
+            <div class="d-none" id="days_for_doc">{{ days_for }}</div>
+
 
             {% if vises != "не нужна" %}
                 <div class="col-12" id="exc_">Консульский сбор (1 человек): {{ price_vs }} грн</div>
                 {% if kol > 0 %}
-                    <div class="col-12 col-md-4"><input  id="kolViz" type="number"  min="0" max="{{ kol }}" placeholder="Сколько виз нужно оформить"></div>
+                    <div class="col-12 col-md-4"><input id="kolViz" type="number" min="0" max="{{ kol }}"
+                                                        placeholder="Сколько виз нужно оформить"></div>
                 {% endif %}
                 <div class="d-none" id="priceVis">{{ price_vs }}</div>
             {% endif %}
-
+            {% if vises != "не нужна" %}
+                {% if kol < 2 %}
+                    <div class="col-12" style="margin-top: 5px">Документы в наличии:</div>
+                    <div class="custom-control custom-checkbox col-12" style="margin-left: 25px">
+                        <input type="checkbox" checked class="custom-control-input" id="pasp">
+                        <label class="custom-control-label" for="pasp">Паспорт</label>
+                    </div>
+                    <div class="custom-control custom-checkbox col-12" style="margin-left: 25px">
+                        <input type="checkbox" checked class="custom-control-input" id="Zpasp">
+                        <label class="custom-control-label" for="Zpasp">Загранпасорт</label>
+                    </div>
+                    <div class="custom-control custom-checkbox col-12" style="margin-left: 25px">
+                        <input type="checkbox" checked class="custom-control-input" id="iin">
+                        <label class="custom-control-label" for="iin">ИНН</label>
+                    </div>
+                    <div class="col-12" id="error_suc_pas"></div>
+                    <div class="col-12" id="error_suc"></div>
+                {% endif %}
+            {% endif %}
             <div class="col-12" align="right" style="padding-top: 20px;"><h4 id="vsego">Всего: </h4></div>
             <div class="col-12 col-md-4 offset-md-8" style="padding-bottom: 20px; padding-top: 20px;">
                 <button class="btn {% if days < 0 %}disabled{% endif %} btnOl">Подтвердить</button>

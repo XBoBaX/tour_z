@@ -22,6 +22,12 @@ def get_res(request1):
     price_t = request1.GET.get('price')
     otel_t = request1.GET.get('otel_n')
     days = request1.GET.get('day_ot')
+
+    pasp = request1.GET.get('pasp', default=True)
+    zpasp = request1.GET.get('zpasp', default=True)
+    iin = request1.GET.get('iin', default=True)
+    dok_days = request1.GET.get('dok_days')
+
     json_ticket = json.loads(json_ticket)
     json_exc = json.loads(json_exc)
     print(json_ticket)
@@ -46,15 +52,42 @@ def get_res(request1):
     price_t = kol * tk.price + kolP * round(tk.price * 1.3)
     kolvo = kolP + kol
     price_ot = int(ot.price_one_pers_day) * int(kolvo) * int(days)
-    print(price_ot)
-    print(price_t)
     total_price = price_t + price_ot
     print(total_price)
+
+    if pasp == "false":
+        print("false")
+        pasp = False
+        if int(dok_days) > 20:
+            # Паспорт
+            total_price += 252
+        elif int(dok_days) > 3:
+            total_price += 557
+    else:
+        pasp = True
+
+    if zpasp == "false":
+        zpasp = False
+        print("false2")
+        if int(dok_days) > 20:
+            # Загранпаспорт
+            total_price += 557
+        else:
+            total_price += 810
+    else:
+        zpasp = True
+
+    if iin == "false":
+        iin = False
+    else:
+        iin = True
+    print(total_price)
+
     if auth.get_user(request1).username.__len__() < 1:
         return HttpResponse('no', content_type='text/html')
 
     tr1 = Tour(user=auth.get_user(request1), kolvo_people=kolvo, obj_tickets=tk, tickets=json_ticket, exc=json_exc,
-               obj_hotel=ot, total_price=total_price)
+               obj_hotel=ot, total_price=total_price, for_buy_pas = pasp, for_buy_zag = zpasp, for_buy_iin = iin)
     tr1.set_tck(tk)
     tr1.save()
     return HttpResponse('ok', content_type='text/html')
@@ -86,17 +119,25 @@ def get_check(request1):
     print(json_vis)
     day = 3
     pr_grn = 0
+    date1 = "{0}".format(bil.go_date)[:10]
+    date1 = datetime.strptime(date1, '%Y-%m-%d')
+    dateNow = datetime.today()
+    dateNow = "{0}".format(dateNow)[:10]
+    dateNow = datetime.strptime(dateNow, '%Y-%m-%d')
+    day_for_otp = date1 - dateNow
+    day_for_otp = int(day_for_otp.days)
+    date1 = datetime.strftime(bil.go_date, '%Y-%m-%d')
     if json_vis['vises'] != "не нужна":
-        date1 = datetime.strftime(bil.go_date, '%Y-%m-%d')
         date2 = datetime.now() + timedelta(days=datetime.strptime(json_vis['min_term'], '%d').day)
         date1 = datetime.strptime(date1, '%Y-%m-%d')
         day = date1 - date2
         day = abs(day.days)
         pr_grn = (int(json_vis['price']) * 26)
+    print(day_for_otp)
     message = render_to_string('exc/include/exc.html',
                                {'list': list, 'vises': json_vis['vises'], 'price_vs': pr_grn,
                                 'min': json_vis['min_term'], 'max': json_vis['max_term'], 'doc': json_vis['doc'],
-                                'price_H': price_H, 'kol': kol, 'days': day})
+                                'price_H': price_H, 'kol': kol, 'days': day, 'days_for': day_for_otp})
     return HttpResponse(message)
 
 

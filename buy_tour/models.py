@@ -10,6 +10,10 @@ class Tour(models.Model):
     total_price = models.IntegerField(verbose_name="Конечная стоимость")
     kolvo_people = models.IntegerField(verbose_name="Кол-во пасажиров")
 
+    for_buy_pas = models.BooleanField(default=True, verbose_name='Есть ли паспорт')
+    for_buy_zag = models.BooleanField(default=True, verbose_name='Есть ли загранпаспорт')
+    for_buy_iin = models.BooleanField(default=True, verbose_name='Есть ли ИИН')
+
     exc = models.TextField(verbose_name="Экскурсия")
 
     tickets = models.TextField(verbose_name="Билеты")
